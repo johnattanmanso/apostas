@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nova Aposta - A Cara da Riqueza</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>A Cara da Riqueza</h1>
+    <nav>
+      <a href="dashboard.html" class="nav-button">Dashboard</a>
+      <a href="nova-aposta.html" class="nav-button active">Nova Aposta</a>
+      <a href="movimentacao.html" class="nav-button">Movimentação</a>
+      <a href="historico.html" class="nav-button">Histórico</a>
+      <a href="configuracoes.html" class="nav-button">Configurações</a>
+      <button id="logout-button">Sair</button>
+    </nav>
+  </header>
+
+  <main id="app-screen">
+    <section id="nova-aposta" class="tab-content active">
+      <h2>Nova Aposta</h2>
+      <div class="aposta-form-section">
+        <input type="text" id="aposta-nome" placeholder="Nome do Bolão" />
+        <select id="select-tipo-jogo"></select>
+
+        <h3>Adicionar Jogo</h3>
+        <input type="text" id="linha-concurso" placeholder="Concurso (opcional)" />
+        <input type="date" id="linha-data-sorteio" />
+        <input type="number" id="linha-premio-estimado" placeholder="Prêmio Estimado (opcional)" step="0.01" />
+        <input type="number" id="linha-quantidade" value="1" min="1" />
+        <input type="text" id="linha-numeros" placeholder="Números (separados por vírgula)" />
+        <button id="add-linha-aposta-button" class="add-btn">Adicionar Jogo</button>
+
+        <div id="linhas-aposta-list" class="history-list"></div>
+        <p id="aposta-total" class="total">Custo Total: R$ 0,00</p>
+
+        <h3>Participantes</h3>
+        <div id="player-checklist" class="player-checklist"></div>
+
+        <button id="finalizar-aposta-button">Finalizar e Ratear Bolão</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="loader" class="loader"></div>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/nova-aposta.js"></script>
+</body>
+</html>

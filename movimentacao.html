@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movimentação - A Cara da Riqueza</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>A Cara da Riqueza</h1>
+    <nav>
+      <a href="dashboard.html" class="nav-button">Dashboard</a>
+      <a href="nova-aposta.html" class="nav-button">Nova Aposta</a>
+      <a href="movimentacao.html" class="nav-button active">Movimentação</a>
+      <a href="historico.html" class="nav-button">Histórico</a>
+      <a href="configuracoes.html" class="nav-button">Configurações</a>
+      <button id="logout-button">Sair</button>
+    </nav>
+  </header>
+
+  <main id="app-screen">
+    <section id="movimentacao" class="tab-content active">
+      <h2>Extrato do Jogador</h2>
+      <select id="select-jogador-extrato"></select>
+      <div class="history-container">
+        <h3 id="extrato-title">Extrato</h3>
+        <button id="export-csv-btn" style="display: none; margin-bottom: 1rem;">Exportar Extrato em CSV</button>
+        <div id="extrato-list" class="history-list">
+          <p>Selecione um jogador acima.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Movimentação Manual</h2>
+      <div class="mov-manual-form">
+        <select id="select-jogador-manual"></select>
+        <input type="text" id="movimentacao-valor" placeholder="Valor (use ponto para decimal)" />
+        <input type="text" id="movimentacao-descricao" placeholder="Descrição" />
+        <button id="add-mov-manual-button">Adicionar Movimentação</button>
+      </div>
+
+      <hr>
+
+      <h2>Registrar Prêmio</h2>
+      <select id="select-aposta-premiada"></select>
+      <div id="participantes-aposta"></div>
+      <input type="text" id="prize-valor-total" placeholder="Valor Total do Prêmio" />
+      <button id="distribute-prize-button">Distribuir Prêmio</button>
+    </section>
+  </main>
+
+  <div id="loader" class="loader"></div>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/movimentacao.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Histórico - A Cara da Riqueza</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>A Cara da Riqueza</h1>
+    <nav>
+      <a href="dashboard.html" class="nav-button">Dashboard</a>
+      <a href="nova-aposta.html" class="nav-button">Nova Aposta</a>
+      <a href="movimentacao.html" class="nav-button">Movimentação</a>
+      <a href="historico.html" class="nav-button active">Histórico</a>
+      <a href="configuracoes.html" class="nav-button">Configurações</a>
+      <button id="logout-button">Sair</button>
+    </nav>
+  </header>
+
+  <main id="app-screen">
+    <section id="historico" class="tab-content active">
+      <h2>Histórico de Bolões</h2>
+      <div id="apostas-history-list" class="history-list"></div>
+
+      <hr>
+
+      <h2>Histórico de Prêmios</h2>
+      <div id="prize-history-list" class="history-list"></div>
+    </section>
+  </main>
+
+  <div id="loader" class="loader"></div>
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/historico.js"></script>
+</body>
+</html>
