@@ -1,3 +1,4 @@
+// js/firebase-config.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
@@ -15,6 +16,6 @@ const firebaseConfig = {
 // Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
 
-// Exporta as instâncias para serem usadas em outros arquivos
+// Exporta as instâncias prontas para o auth.js e dashboard.js
 export const auth = getAuth(app);
 export const db = getFirestore(app);
