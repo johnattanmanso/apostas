@@ -9,20 +9,26 @@
 </head>
 <body class="login-page">
   <div class="login-container">
-    <h2>A Cara da Riqueza</h2>
+    <header style="text-align: center; margin-bottom: 2rem;">
+        <h1 style="color: var(--primary-color);">A Cara da Riqueza</h1>
+        <p>Sistema de Gestão de Apostas</p>
+    </header>
+
     <form id="login-form">
       <div class="input-group">
         <i class="fas fa-envelope"></i>
-        <input type="email" id="email" placeholder="E-mail" required />
+        <input type="email" id="email" name="email" placeholder="E-mail" required autocomplete="username" />
       </div>
       <div class="input-group">
         <i class="fas fa-lock"></i>
-        <input type="password" id="password" placeholder="Senha" required />
+        <input type="password" id="password" name="password" placeholder="Senha" required autocomplete="current-password" />
       </div>
-      <button type="button" id="login-button">Entrar</button>
+      <button type="submit" id="login-button">Entrar</button>
     </form>
   </div>
+
   <div id="loader" class="loader"></div>
+  
   <script type="module" src="js/auth.js"></script>
 </body>
 </html>
