@@ -1,4 +1,7 @@
-// js/firebase-config.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyCBgsFf6ynDU60_ITWQ1sNtYiCyKyyE83I",
   authDomain: "sistema-apostas-757f2.firebaseapp.com",
@@ -9,22 +12,9 @@ const firebaseConfig = {
   measurementId: "G-91GW8B889B"
 };
 
-let auth = null;
-let db = null;
+// Inicializa o Firebase
+const app = initializeApp(firebaseConfig);
 
-try {
-  if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-  }
-  auth = firebase.auth();
-  db = firebase.firestore();
-
-  if (window.location.hostname !== 'localhost') {
-    console.warn('AVISO: Firebase config exposta em produção!');
-  }
-} catch (e) {
-  console.error("Erro ao inicializar Firebase:", e);
-  alert("Erro crítico: Firebase não inicializado.");
-}
-
-export { auth, db };
+// Exporta as instâncias para serem usadas em outros arquivos
+export const auth = getAuth(app);
+export const db = getFirestore(app);
